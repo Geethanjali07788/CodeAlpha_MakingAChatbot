@@ -1,0 +1,24 @@
+Code Alpha - Task 4: Enhanced Chatbot (Demo Script)
+
+1. Introduction
+"This is my enhanced version of Task 4: Making a Chatbot. It uses HTML, CSS, and JavaScript, and includes more predefined questions and responses."
+
+2. Show Files
+- index.html with Q&A logic
+- README for instructions
+
+3. Run the Chatbot
+- Open index.html
+- Ask questions like:
+    • hello
+    • what is code alpha
+    • how are you
+    • thank you
+    • bye
+- Show real-time responses from the bot
+
+4. Hosting on GitHub Pages
+- Mention steps to publish using GitHub Pages
+
+5. Conclusion
+"That's my chatbot demo. Thank you!"

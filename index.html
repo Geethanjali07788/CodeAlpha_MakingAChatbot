@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Chatbot</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; padding: 20px; }
+        .chatbox { width: 400px; margin: auto; background: white; padding: 10px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+        .chatlogs { height: 300px; overflow-y: scroll; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+        .chat { margin: 5px 0; }
+        .user { text-align: right; color: blue; }
+        .bot { text-align: left; color: green; }
+    </style>
+</head>
+<body>
+    <div class="chatbox">
+        <h2>AI Chatbot</h2>
+        <div class="chatlogs" id="chatlogs"></div>
+        <input type="text" id="userInput" placeholder="Ask something..." onkeydown="if(event.key === 'Enter') sendMessage()">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        const responses = {
+            "hello": "Hi there! How can I help you?",
+            "what is your name": "I'm CodeAlpha Bot.",
+            "how are you": "I'm just code, but I'm doing great!",
+            "what can you do": "I can answer simple questions based on predefined patterns.",
+            "what is code alpha": "Code Alpha is an internship program offering real-world tech tasks.",
+            "how to contact support": "Please email support@codealpha.com",
+            "thank you": "You're welcome!",
+            "bye": "Goodbye!",
+            "default": "I'm not sure I understand that. Try asking something else."
+        };
+
+        function sendMessage() {
+            const input = document.getElementById("userInput").value.toLowerCase().trim();
+            const chatlogs = document.getElementById("chatlogs");
+
+            if (!input) return;
+
+            const userChat = `<div class='chat user'>You: ${input}</div>`;
+            chatlogs.innerHTML += userChat;
+
+            let response = responses[input] || responses["default"];
+            const botChat = `<div class='chat bot'>Bot: ${response}</div>`;
+            chatlogs.innerHTML += botChat;
+
+            document.getElementById("userInput").value = "";
+            chatlogs.scrollTop = chatlogs.scrollHeight;
+        }
+    </script>
+</body>
+</html>
